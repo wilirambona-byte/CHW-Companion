@@ -74,10 +74,11 @@
   }
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(13,148,136,.13) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 40% at 15% 80%, rgba(245,158,11,.1) 0%, transparent 60%),
-      linear-gradient(160deg, #e6f7f5 0%, #fdf6ec 55%, #fef3e2 100%);
+    background-image:
+      linear-gradient(160deg, rgba(15,32,39,0.72) 0%, rgba(13,148,136,0.55) 50%, rgba(15,32,39,0.78) 100%),
+      url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mozambique_village_grass_huts_mountains.jpg/1280px-Mozambique_village_grass_huts_mountains.jpg');
+    background-size: cover;
+    background-position: center;
   }
   .hero-arc {
     position: absolute; bottom: -2px; left: 0; right: 0; z-index: 1;
@@ -89,47 +90,54 @@
     position: relative; z-index: 2;
     max-width: 860px;
     text-align: center;
+    width: 100%;
   }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: .6rem;
-    font-family: 'DM Mono', monospace;
-    font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--teal); background: rgba(13,148,136,.1);
-    padding: .38rem 1rem; border-radius: 100px;
-    margin-bottom: 1.8rem;
-    animation: fadeUp .6s ease both;
-  }
-  .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); display: inline-block; }
-
+  
   h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.6rem, 6vw, 5rem);
     line-height: 1.1;
-    color: var(--ink);
+    color: var(--white);
     margin-bottom: 1.6rem;
     animation: fadeUp .7s .1s ease both;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
   }
-  h1 em { color: var(--teal); font-style: italic; }
+  h1 em { color: var(--teal-light); font-style: italic; }
 
   .hero-sub {
     font-size: clamp(.95rem, 1.6vw, 1.15rem);
     line-height: 1.75;
-    color: var(--ink-soft);
-    max-width: 640px; margin: 0 auto 2.6rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 640px; margin: 0 auto 0;
     font-weight: 300;
     animation: fadeUp .7s .2s ease both;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    padding: 1rem 1.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
   }
-  .hero-chips {
-    display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center;
-    animation: fadeUp .7s .3s ease both;
+
+  .hero-photo-strip {
+    width: 100%; max-width: 860px; margin: 2.2rem auto 0;
+    border-radius: 18px; overflow: hidden;
+    height: 220px; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: fadeUp .7s .35s ease both;
+    border: 2px solid rgba(255,255,255,0.18);
   }
-  .chip {
-    font-size: .76rem; font-weight: 500; letter-spacing: .04em;
-    padding: .36rem .9rem; border-radius: 100px;
-    background: var(--white); border: 1px solid var(--border);
-    color: var(--ink-soft);
+  .hero-photo-strip img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  .chip.accent { background: var(--teal); color: var(--white); border-color: var(--teal); }
+  .hero-photo-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    color: rgba(255,255,255,0.75);
+    font-size: .72rem; letter-spacing: .06em;
+    padding: 1.2rem .9rem .5rem;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+  }
 
   /* ── SECTION COMMONS ── */
   section { padding: 6rem 5vw; }
@@ -403,15 +411,11 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow"><span></span> Concept Note · 2026 <span></span></div>
-    <h1>AI-Powered Support for<br><em>Community Health Workers</em></h1>
+    <h1>CHW Companion<br><em>AI-Powered Support for Community Health Workers</em></h1>
     <p class="hero-sub">CHW Companion is a WhatsApp-based conversational AI agent designed to strengthen the capacity of Community Health Workers during home visits and patient referrals in low-resource settings.</p>
-    <div class="hero-chips">
-      <span class="chip accent">Primary Healthcare</span>
-      <span class="chip">WhatsApp AI Agent</span>
-      <span class="chip">Low-Resource Settings</span>
-      <span class="chip">Clinical Decision Support</span>
-      <span class="chip">Burundi · Africa</span>
+    <div class="hero-photo-strip">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Community_health_workers_lead_the_fight_against_malaria_in_Rwanda_%2814%29_%2815028840484%29.jpg/1280px-Community_health_workers_lead_the_fight_against_malaria_in_Rwanda_%2814%29_%2815028840484%29.jpg" alt="Community health workers in rural Africa" />
+      <div class="hero-photo-caption">Community Health Workers in rural Africa · WHO / S. Torfinn</div>
     </div>
   </div>
   <div class="hero-arc">
@@ -425,11 +429,10 @@
 <section class="context" id="context">
   <div class="context-grid">
     <div class="reveal">
-      <p class="section-label">01 / Context</p>
       <h2>AI and Primary Healthcare</h2>
       <div class="section-divider"></div>
-      <p class="lead">Community health workers are the backbone of primary healthcare in low-resource settings — often the first and only point of contact between patients and the health system.</p>
-      <p class="lead" style="margin-top:1rem;">Yet CHWs operate with limited training, scarce diagnostic tools, and no easy access to clinical guidance in the field. Recent research shows LLMs can respond to real CHW clinical questions with high accuracy — at a fraction of the cost of human expert consultation.</p>
+      <p class="lead">Community health workers are the backbone of primary healthcare in low-resource settings, often serving as the first and only point of contact between patients and the health system.</p>
+      <p class="lead" style="margin-top:1rem;">Yet CHWs operate with limited training, scarce diagnostic tools, and no easy access to clinical guidance in the field. Recent research shows that large language models can respond to real CHW clinical questions with high accuracy, at a fraction of the cost of human expert consultation.</p>
     </div>
     <div class="context-stat-grid reveal">
       <div class="stat-card">
@@ -457,9 +460,9 @@
   <div class="tool-inner">
     <div class="reveal">
       <p class="section-label">02 / The Tool</p>
-      <h2>What the CHW Companion Is — and Is Not</h2>
+      <h2>What the CHW Companion Is and Is Not</h2>
       <div class="section-divider"></div>
-      <p class="lead">A CHW sends a message describing a patient's symptoms. The Companion replies with clear, evidence-based guidance — helping identify likely conditions, decide on referrals, and document the visit.</p>
+      <p class="lead">A CHW sends a message describing a patient's symptoms. The Companion replies with clear, evidence-based guidance, helping identify likely conditions, advise on referrals, and support documentation of the visit.</p>
     </div>
     <div class="compare-grid reveal">
       <div class="compare-card is">
@@ -469,7 +472,7 @@
           <li><span class="tick">✔</span> A real-time companion during home visits</li>
           <li><span class="tick">✔</span> A charting and documentation assistant</li>
           <li><span class="tick">✔</span> Designed for low-connectivity environments</li>
-          <li><span class="tick">✔</span> A tool that supports — not bypasses — referral pathways</li>
+          <li><span class="tick">✔</span> A tool that supports referral pathways rather than bypassing them</li>
         </ul>
       </div>
       <div class="compare-card isnot">
@@ -493,26 +496,26 @@
       <p class="section-label">03 / Workflow</p>
       <h2>How It Works</h2>
       <div class="section-divider"></div>
-      <p class="lead">A simple three-step interaction loop that fits the CHW's everyday routine — no new apps, no special hardware.</p>
+      <p class="lead">A simple three-step interaction loop that fits the CHW's everyday routine, with no new apps and no special hardware required.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">01</div>
         <div class="step-icon">💬</div>
         <h4>CHW Sends a Message</h4>
-        <p>The health worker describes a patient's symptoms or situation via a regular WhatsApp message — just as they would text a colleague.</p>
+        <p>The health worker describes a patient's symptoms or situation via a regular WhatsApp message, just as they would reach out to a trusted colleague.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
         <div class="step-icon">🧠</div>
-        <h4>AI Analyses &amp; Responds</h4>
+        <h4>AI Analyses and Responds</h4>
         <p>The Companion processes the message and returns clear, evidence-based guidance on likely conditions and whether the patient should be referred.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
         <div class="step-icon">📋</div>
         <h4>CHW Documents the Visit</h4>
-        <p>The interaction is used to log the visit, supporting record-keeping and continuity of care — with data belonging to the community and health system.</p>
+        <p>The interaction supports visit logging and record-keeping, with all data remaining under the authority of the community and the national health system.</p>
       </div>
     </div>
   </div>
@@ -525,7 +528,7 @@
       <p class="section-label">04 / Privacy</p>
       <h2>Privacy by Design</h2>
       <div class="section-divider"></div>
-      <p class="lead">Patient data is sensitive. The CHW Companion is built with privacy protection at its core — not as an afterthought, but from day one.</p>
+      <p class="lead">Patient data is sensitive. The CHW Companion is built with privacy protection at its core, woven into the design from day one rather than added as an afterthought.</p>
     </div>
     <div class="privacy-grid reveal">
       <div class="privacy-item">
@@ -539,14 +542,14 @@
         <div class="privacy-icon">🤝</div>
         <div>
           <h4>Community-Level Consent</h4>
-          <p>Consent is sought from local leaders and health authorities before deployment — community consent carries as much weight as individual consent.</p>
+          <p>Consent is sought from local leaders and health authorities before deployment, recognising that community consent carries as much weight as individual consent.</p>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-icon">🏛️</div>
         <div>
           <h4>Data Sovereignty</h4>
-          <p>Health trends and usage patterns belong to the community and national health system — not the technology provider.</p>
+          <p>Health trends and usage patterns belong to the community and national health system, not to the technology provider.</p>
         </div>
       </div>
       <div class="privacy-item">
