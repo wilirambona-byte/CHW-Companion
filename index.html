@@ -216,8 +216,8 @@
   .how .lead { color: rgba(255,255,255,.6); }
 
   .steps {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    gap: 2rem; margin-top: 5rem; position: relative; z-index: 1;
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem; margin-top: 5rem; position: relative; z-index: 1;
     max-width: 1200px; margin-left: auto; margin-right: auto;
   }
   .step {
@@ -248,7 +248,96 @@
   .step h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: .75rem; }
   .step p { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.7; }
 
-  .privacy { background: var(--white); }
+  /* Evidence section — uses dark theme like .how */
+  .evidence { background: var(--white); }
+  .evidence-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin-top: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  .evidence-card {
+    padding: 2rem; border-radius: 20px;
+    background: #f8fafc; border: 1px solid var(--border);
+  }
+  .evidence-card h4 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: .75rem; }
+  .evidence-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+  .evidence-card .ev-metric {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--teal);
+    line-height: 1; margin-bottom: 0.4rem;
+  }
+
+  /* Safety section — dark theme */
+  .safety { background: #020617; color: var(--white); position: relative; overflow: hidden; }
+  .safety .section-label { color: var(--teal-light); }
+  .safety h2 { color: var(--white); }
+  .safety .lead { color: rgba(255,255,255,.6); }
+  .safety-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  .safety-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 2rem; border-radius: 20px;
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.06);
+  }
+  .safety-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(45, 212, 191, 0.08);
+    display: grid; place-items: center;
+    font-size: 1.25rem;
+  }
+  .safety-item h4 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: .5rem; }
+  .safety-item p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+
+  /* Gender section */
+  .gender { background: var(--cream); border-top: 1px solid var(--border); }
+  .gender-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  .gender-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 2rem; border-radius: 20px;
+    background: var(--white); border: 1px solid var(--border);
+  }
+  .gender-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(217, 119, 6, 0.06);
+    display: grid; place-items: center;
+    font-size: 1.25rem;
+  }
+  .gender-item h4 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: .5rem; }
+  .gender-item p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+  /* Roadmap section */
+  .roadmap { background: var(--white); }
+  .roadmap-timeline {
+    max-width: 1000px; margin: 4rem auto 0;
+    display: flex; flex-direction: column; gap: 2rem;
+  }
+  .roadmap-phase {
+    display: grid; grid-template-columns: 120px 1fr;
+    gap: 2rem; align-items: start;
+    padding: 2rem; border-radius: 20px;
+    background: #f8fafc; border: 1px solid var(--border);
+  }
+  .phase-label {
+    font-family: 'DM Mono', monospace;
+    font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--teal-mid); font-weight: 600;
+    padding-top: 0.2rem;
+  }
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: .5rem;
+  }
+  .roadmap-phase p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+  .privacy { background: var(--white); border-top: 1px solid var(--border); }
+  .privacy-inner { max-width: 1200px; margin: 0 auto; }
   .privacy-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem; margin-top: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto;
@@ -268,6 +357,14 @@
   }
   .privacy-item h4 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: .5rem; }
   .privacy-item p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+  /* References section */
+  .references { background: var(--cream); border-top: 1px solid var(--border); }
+  .ref-list { max-width: 900px; margin: 2rem auto 0; }
+  .ref-list p {
+    font-size: .82rem; color: var(--muted); line-height: 1.7;
+    padding-left: 1.5rem; text-indent: -1.5rem; margin-bottom: 0.75rem;
+  }
 
   .author {
     background: #020617;
@@ -335,7 +432,8 @@
 
   @media (max-width: 968px) {
     .context-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .compare-grid, .steps, .privacy-grid { grid-template-columns: 1fr; }
+    .compare-grid, .steps, .privacy-grid, .evidence-grid, .safety-grid, .gender-grid { grid-template-columns: 1fr; }
+    .roadmap-phase { grid-template-columns: 1fr; gap: 0.5rem; }
     .author-inner { grid-template-columns: 1fr; text-align: center; }
     .author-avatar { margin: 0 auto; }
     .author p { margin: 0 auto; }
@@ -349,124 +447,258 @@
 <nav>
   <div class="nav-logo">CHW Companion · 2026</div>
   <ul class="nav-links">
-    <li><a href="#context">Context</a></li>
+    <li><a href="#context">The Problem</a></li>
+    <li><a href="#evidence">Evidence</a></li>
     <li><a href="#tool">The Tool</a></li>
     <li><a href="#how">How It Works</a></li>
+    <li><a href="#safety">Safety</a></li>
     <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#author">Author</a></li>
   </ul>
 </nav>
 
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <h1>CHW Companion</h1>
-    <p class="hero-tagline">AI-Powered Support for Community Health Workers</p>
-    <p class="hero-sub">CHW Companion is a WhatsApp-based conversational AI agent designed to strengthen the capacity of Community Health Workers during home visits and patient referrals in low-resource settings.</p>
+    <p class="hero-tagline">AI-Powered Clinical Decision Support for Community Health Workers</p>
+    <p class="hero-sub">CHW Companion is a WhatsApp-based AI tool designed to support — not replace — community health workers during home visits and patient encounters in low-resource settings. Voice in, text out, grounded in national clinical protocols.</p>
   </div>
 </section>
 
+<!-- ═══════════════════ THE PROBLEM ═══════════════════ -->
 <section class="context" id="context">
   <div class="context-grid">
     <div class="reveal">
-      <p class="section-label">Background</p>
-      <h2>AI and Primary Healthcare</h2>
+      <p class="section-label">The Problem</p>
+      <h2>A Health Workforce Crisis, Concentrated in Africa</h2>
       <div class="section-divider"></div>
-      <p class="lead">Community health workers are the backbone of primary healthcare in low-resource settings, often serving as the first and only point of contact between patients and the health system.</p>
-      <p class="lead" style="margin-top:1.5rem;">Yet CHWs operate with limited training, scarce diagnostic tools, and no easy access to clinical guidance in the field. Recent research shows that large language models can respond to real CHW clinical questions with high accuracy, at a fraction of the cost of human expert consultation.</p>
+      <p class="lead">Community health workers are the backbone of primary healthcare in sub-Saharan Africa — often the first and only point of contact between patients and the health system. Yet the world faces a shortage of 15 million health workers, and Africa bears the brunt: the WHO African region's shortage is projected to constitute 52% of the global gap by 2030.</p>
+      <p class="lead" style="margin-top:1.5rem;">CHWs carry the weight of this reality with limited training, scarce diagnostic tools, and no easy access to clinical guidance in the field. They need real-time support at the point of care — in their language, through a channel they already use, without adding to their workload.</p>
     </div>
     <div class="context-stat-grid reveal">
       <div class="stat-card">
-        <div class="stat-num">1st</div>
-        <div class="stat-label">Point of contact between patients and the formal health system</div>
+        <div class="stat-num">15M</div>
+        <div class="stat-label">Global health worker shortage in 2020 (Boniol et al., 2022)</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">↓ Cost</div>
-        <div class="stat-label">Fractional cost compared to human expert consultation</div>
+        <div class="stat-num">52%</div>
+        <div class="stat-label">Of global shortage projected in Africa by 2030</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">Rural</div>
-        <div class="stat-label">Primary focus on underserved remote communities</div>
+        <div class="stat-num">6.5×</div>
+        <div class="stat-label">Health worker density gap between high- and low-income countries</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">📱 WA</div>
-        <div class="stat-label">Leveraging familiar communication technology</div>
+        <div class="stat-label">CHWs already use WhatsApp voice notes daily — no new behaviour needed</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════ EVIDENCE ═══════════════════ -->
+<section class="evidence" id="evidence">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Evidence Base</p>
+      <h2>Can AI Actually Help Frontline Health Workers?</h2>
+      <div class="section-divider"></div>
+      <p class="lead">The question is not whether LLMs perform well on medical exams designed for doctors. It is whether they can help frontline health workers, in non-English languages, on the questions those workers actually face. The most relevant evidence says yes — with caveats we take seriously.</p>
+    </div>
+    <div class="evidence-grid reveal">
+      <div class="evidence-card">
+        <div class="ev-metric">4.49/5</div>
+        <h4>LLM Clinical Quality Score</h4>
+        <p>Best-performing models scored 4.49 out of 5 across 11 expert-rated clinical quality dimensions, significantly outperforming local clinicians (P&nbsp;&lt;&nbsp;0.001), on 5,609 real questions from 101 Rwandan CHWs (Rutunda et&nbsp;al., 2026, <em>Nature Health</em>).</p>
+      </div>
+      <div class="evidence-card">
+        <div class="ev-metric">&gt;500×</div>
+        <h4>Cheaper Per Response</h4>
+        <p>LLM responses cost an average of US$0.0035, compared with US$5.43 from a GP. Even in Kinyarwanda, performance remained superior to clinicians at US$0.0044 per response (Rutunda et&nbsp;al., 2026).</p>
+      </div>
+      <div class="evidence-card">
+        <div class="ev-metric">3 Trials</div>
+        <h4>Real-World Evidence Underway</h4>
+        <p>Three LLM clinical decision support trials are running across Kenya, Nigeria, and Rwanda — including the first RCT of an LLM on real patient outcomes in Africa, enrolling 9,000 patients (Mateen et&nbsp;al., 2025, <em>Nature Medicine</em>).</p>
+      </div>
+      <div class="evidence-card">
+        <div class="ev-metric">Honest</div>
+        <h4>We Know What We Don't Know</h4>
+        <p>Benchmarking tested single Q&A exchanges, not real clinical encounters. The measured LLM advantage partly reflects evaluator preference for thoroughness. Field trials must confirm whether patient outcomes actually improve. CHW Companion is designed to be the implementation step that the evidence calls for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ IS / IS NOT ═══════════════════ -->
 <section class="tool" id="tool">
   <div class="tool-inner">
     <div class="reveal">
-      <p class="section-label">Capabilities</p>
-      <h2>What the CHW Companion Is and Is Not</h2>
+      <p class="section-label">The Solution</p>
+      <h2>What the CHW Companion Is — and What It Is Not</h2>
       <div class="section-divider"></div>
-      <p class="lead">A CHW sends a message describing a patient's symptoms. The Companion replies with clear, evidence-based guidance, helping identify likely conditions, advise on referrals, and support documentation of the visit.</p>
+      <p class="lead">A CHW sends a voice note describing a patient's symptoms. The Companion replies with concise, evidence-based guidance drawn from WHO protocols, Africa CDC guidance, and the national CHW service package. The CHW reads the response, uses their own judgement, and acts.</p>
     </div>
     <div class="compare-grid reveal">
       <div class="compare-card is">
         <h3>The Companion IS</h3>
         <ul>
           <li><span class="tick">✔</span> A clinical decision support tool for CHWs</li>
-          <li><span class="tick">✔</span> A real-time companion during home visits</li>
-          <li><span class="tick">✔</span> A charting and documentation assistant</li>
-          <li><span class="tick">✔</span> Designed for low-connectivity environments</li>
+          <li><span class="tick">✔</span> Designed around voice input and text output</li>
+          <li><span class="tick">✔</span> Built for low-connectivity environments with SMS fallback</li>
           <li><span class="tick">✔</span> A tool that supports referral pathways</li>
+          <li><span class="tick">✔</span> Invoked at the CHW's discretion, within their existing workflow</li>
+          <li><span class="tick">✔</span> An adaptable platform with country-specific deployments</li>
         </ul>
       </div>
       <div class="compare-card isnot">
         <h3>The Companion IS NOT</h3>
         <ul>
-          <li><span class="tick">✘</span> A replacement for the CHW's own judgment</li>
-          <li><span class="tick">✘</span> A diagnostic system or medical device</li>
-          <li><span class="tick">✘</span> A substitute for a doctor or nurse</li>
+          <li><span class="tick">✘</span> A replacement for the CHW's own judgement</li>
+          <li><span class="tick">✘</span> A diagnostic system or medical device (SaMD)</li>
+          <li><span class="tick">✘</span> A substitute for a doctor, nurse, or clinical supervision</li>
           <li><span class="tick">✘</span> A telemedicine platform for patients</li>
-          <li><span class="tick">✘</span> A standalone solution without oversight</li>
+          <li><span class="tick">✘</span> A parallel system that adds reporting burden</li>
+          <li><span class="tick">✘</span> A standalone solution without human oversight</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
 <section class="how" id="how">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="reveal">
       <p class="section-label">Process</p>
       <h2>How It Works</h2>
       <div class="section-divider"></div>
-      <p class="lead">A simple three-step interaction loop that fits the CHW's everyday routine, with no new apps and no special hardware required.</p>
+      <p class="lead">Voice in, text out. No new apps, no typing, no new behaviour — just the WhatsApp voice notes CHWs already use every day, channelled into clinical support.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">01</div>
-        <div class="step-icon">💬</div>
-        <h4>CHW Sends a Message</h4>
-        <p>The health worker describes a patient's symptoms or situation via WhatsApp, as they would reach out to a trusted colleague.</p>
+        <div class="step-icon">🎙️</div>
+        <h4>CHW Sends a Voice Note</h4>
+        <p>The health worker describes the patient's symptoms via WhatsApp voice note in their local language — as naturally as speaking to a colleague.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
         <div class="step-icon">🧠</div>
         <h4>AI Analyses and Responds</h4>
-        <p>The Companion processes the message and returns evidence-based guidance on conditions and referral status.</p>
+        <p>The voice note is transcribed and processed by an LLM grounded in WHO, Africa CDC, and national CHW protocols via retrieval-augmented generation. A text response is returned on WhatsApp.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
         <div class="step-icon">📋</div>
-        <h4>CHW Documents the Visit</h4>
-        <p>The interaction supports logging and record-keeping, with data remaining under national health authority control.</p>
+        <h4>CHW Acts, Visit is Documented</h4>
+        <p>The CHW reads the guidance, applies their own judgement, and acts. The conversation itself serves as the visit record — no additional documentation step required.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon">👁️</div>
+        <h4>Supervisors See More</h4>
+        <p>A rules-based layer monitors for red-flag escalations, pattern anomalies, and generates weekly digests. Supervisors see more without the CHW doing more.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════ CLINICAL SAFETY ═══════════════════ -->
+<section class="safety" id="safety">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Clinical Governance</p>
+      <h2>How It Stays Grounded</h2>
+      <div class="section-divider"></div>
+      <p class="lead">A tool that gives clinical advice to health workers in the field carries real risk. We take this seriously. The following safeguards are built into the design from day one.</p>
+    </div>
+    <div class="safety-grid reveal">
+      <div class="safety-item">
+        <div class="safety-icon">📚</div>
+        <div>
+          <h4>Retrieval Over Verified Protocols</h4>
+          <p>The LLM does not rely on training data alone. A RAG architecture retrieves guidance from WHO IMCI/IMAI, Africa CDC, and the national CHW protocol, chunked by clinical decision point. National protocol takes precedence where sources disagree.</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🩺</div>
+        <div>
+          <h4>CHW Remains the Decision-Maker</h4>
+          <p>Responses are framed as suggestions, not instructions. The CHW's clinical judgement, local knowledge, and direct observation of the patient are irreplaceable. This is a design principle, not a legal disclaimer.</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🚨</div>
+        <div>
+          <h4>Red-Flag Escalation</h4>
+          <p>When the AI recommends an urgent referral — severe pneumonia, eclampsia, danger signs in a newborn — the supervisor and receiving facility are alerted immediately via deterministic rules-based triggers.</p>
+        </div>
+      </div>
+      <div class="safety-item">
+        <div class="safety-icon">🌍</div>
+        <div>
+          <h4>Language-Stratified Safety Monitoring</h4>
+          <p>LLM performance in low-resource languages is measurably lower than in English. Clinical quality metrics are monitored by language of interaction, so safety-relevant performance drops can be detected and addressed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ GENDER SENSITIVITY ═══════════════════ -->
+<section class="gender" id="gender">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Inclusive Design</p>
+      <h2>Gender Sensitivity</h2>
+      <div class="section-divider"></div>
+      <p class="lead">Most CHWs in sub-Saharan Africa are women. In rural communities shaped by patriarchal norms, women may face barriers to digital technology use. Three years of programme implementation in Burundi has surfaced consistent feedback on these challenges — they are documented observations, not hypotheses.</p>
+    </div>
+    <div class="gender-grid reveal">
+      <div class="gender-item">
+        <div class="gender-icon">🎙️</div>
+        <div>
+          <h4>Voice Input Removes the Literacy Barrier</h4>
+          <p>CHWs who are less comfortable typing — disproportionately women in contexts where girls' education was deprioritised — interact using the voice notes they already send every day.</p>
+        </div>
+      </div>
+      <div class="gender-item">
+        <div class="gender-icon">📱</div>
+        <div>
+          <h4>No Visible "AI App" on the Phone</h4>
+          <p>The tool works within WhatsApp. There is no separate application that might attract attention or require explanation in households where women's phone use is scrutinised.</p>
+        </div>
+      </div>
+      <div class="gender-item">
+        <div class="gender-icon">🔊</div>
+        <div>
+          <h4>Gender-Matched Voice (Planned)</h4>
+          <p>If text-to-speech is introduced in future versions, the system will offer gender-matched voice options. This feature will be tested during the pilot, not assumed effective.</p>
+        </div>
+      </div>
+      <div class="gender-item">
+        <div class="gender-icon">💪</div>
+        <div>
+          <h4>Professional Empowerment</h4>
+          <p>Research from Mozambique found that female CHWs reported increased status when equipped with mHealth tools (Kinshella et al., 2021). CHW Companion is designed with this potential in mind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PRIVACY ═══════════════════ -->
 <section class="privacy" id="privacy">
   <div class="privacy-inner">
     <div class="reveal">
       <p class="section-label">Governance</p>
       <h2>Privacy by Design</h2>
       <div class="section-divider"></div>
-      <p class="lead">Patient data is sensitive. The CHW Companion is built with privacy protection at its core, woven into the design from day one.</p>
+      <p class="lead">Patient data is sensitive. The CHW Companion is built with privacy protection at its core, aligned with WHO's 2021 guidance on ethics and governance of AI for health.</p>
     </div>
     <div class="privacy-grid reveal">
       <div class="privacy-item">
@@ -480,27 +712,84 @@
         <div class="privacy-icon">🤝</div>
         <div>
           <h4>Community-Level Consent</h4>
-          <p>Consent is sought from local leaders, recognising that community consent carries significant weight.</p>
+          <p>Consent is sought from local leaders and community structures, recognising that community consent carries significant weight alongside individual consent.</p>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-icon">🏛️</div>
         <div>
           <h4>Data Sovereignty</h4>
-          <p>Health trends and usage patterns belong to the community and national health system.</p>
+          <p>Health trends and usage patterns belong to the community and national health system. Data is stored in-country or in a jurisdiction agreed with the national health authority.</p>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-icon">🔐</div>
         <div>
           <h4>End-to-End Encryption</h4>
-          <p>Conversations are encrypted in transit. No content is used for training without explicit authorisation.</p>
+          <p>Conversations are encrypted in transit via WhatsApp. No content is used for model training without explicit authorisation.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════ ROADMAP ═══════════════════ -->
+<section class="roadmap" id="roadmap">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Phased Approach</p>
+      <h2>Roadmap</h2>
+      <div class="section-divider"></div>
+      <p class="lead">The tool evolves in phases. Each version has a clear scope, a clear evaluation question, and an explicit dependency on the previous version. We do not promise everything at once.</p>
+    </div>
+    <div class="roadmap-timeline reveal">
+      <div class="roadmap-phase">
+        <div class="phase-label">Version 1</div>
+        <div>
+          <div class="phase-title">Core Clinical Support — Burundi Pilot</div>
+          <p>WhatsApp voice-in/text-out. Gemini 2.5 Flash + RAG over WHO, Africa CDC, and Burundian CHW protocols. Kirundi speech-to-text via Kinyarwanda proxy. Red-flag alerts. Pilot with a defined CHW cohort.</p>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-label">Version 2</div>
+        <div>
+          <div class="phase-title">Supervisor Integration & System Connectivity</div>
+          <p>Supervisor dashboard with weekly digests and QA sampling. FHIR-compliant data export. Initial DHIS2/CHT integration. Language-stratified safety monitoring.</p>
+        </div>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-label">Version 3</div>
+        <div>
+          <div class="phase-title">Proactive Support & Platform Generalisation</div>
+          <p>Morning briefings combining patient roster, follow-ups, and climate-informed clinical priming. Multi-language platform generalisation enabling new country deployments in 4–8 weeks. Gender-sensitive feature evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ REFERENCES ═══════════════════ -->
+<section class="references" id="references">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Sources</p>
+      <h2>Key References</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="ref-list reveal">
+      <p>Boniol, M. et al. (2022). The global health workforce stock and distribution in 2020 and 2030: a threat to equity and 'universal' health coverage? <em>BMJ Global Health</em>, 7(6), e009316.</p>
+      <p>Kinshella, M.-L. W. et al. (2021). How gender influenced the experience of using a mHealth intervention in rural Mozambique. <em>Frontiers in Global Women's Health</em>, 2, 728307.</p>
+      <p>Mateen, B. A. et al. (2025). Trials for LLM-supported clinical decisions in African primary healthcare. <em>Nature Medicine</em>, 31, 2833–2835.</p>
+      <p>Menon, V. et al. (2025). Assessing the potential utility of large language models for assisting community health workers. <em>BMJ Open</em>, 15, e110927.</p>
+      <p>Pieterse, P. (2025). Health workers in sub-Saharan Africa: concurrent skilled health worker shortages and under-employment. <em>Int. J. Health Planning and Management</em>, 40, 1335–1340.</p>
+      <p>Rutunda, S. et al. (2026). Large language models for frontline healthcare support in low-resource settings. <em>Nature Health</em>, 1, 191–197.</p>
+      <p>Scott, K. et al. (2021). Freedom within a cage: How patriarchal gender norms limit women's use of mobile phones in rural central India. <em>BMJ Global Health</em>, 6(Suppl 5), e005596.</p>
+      <p>WHO. (2021). <em>Ethics and governance of artificial intelligence for health.</em> World Health Organization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ AUTHOR ═══════════════════ -->
 <section class="author" id="author">
   <div class="author-inner">
     <div class="author-avatar">WI</div>
@@ -509,8 +798,8 @@
       <h2>Wilfried Irambona</h2>
       <p class="author-title">MD · MSc Public Health &amp; Health Promotion · Burundi</p>
       <p>Wilfried is a Medical Doctor and public health professional from Burundi, committed to strengthening primary healthcare systems and advancing equitable access to services for underserved communities, particularly in rural areas.</p>
-      <p style="margin-top:1.2rem;">He has led integrated community health programmes and supported the implementation of digital health solutions for Community Health Workers (CHWs) with international organisations.</p>
-      <p style="margin-top:1.2rem;">He also contributed to national health policy processes, including the development of the Burundian Community Health Strategy 2025-2029, focusing on digitalisation, CHW profiles, service packages and financing mechanisms. He has a strong interest in data systems and AI-enabled tools to strengthen healthcare delivery and improve health system performance in resource-constrained settings.</p>
+      <p style="margin-top:1.2rem;">He has led integrated community health programmes and supported the implementation of digital health solutions for Community Health Workers with international organisations. He contributed to the Burundian Community Health Strategy 2025–2029, focusing on digitalisation, CHW profiles, service packages, and financing mechanisms.</p>
+      <p style="margin-top:1.2rem;">He has a strong interest in data systems and AI-enabled tools to strengthen healthcare delivery and improve health system performance in resource-constrained settings.</p>
       
       <a href="https://www.linkedin.com/in/wilfried-irambona/" target="_blank" rel="noopener" class="linkedin-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -521,7 +810,7 @@
 </section>
 
 <footer>
-  <p>Draft Concept Note · CHW Companion Project · 2026 · For discussion purposes only &nbsp;·&nbsp; <span>Wilfried Irambona, MD, MSc Public Health</span></p>
+  <p>Concept Note · CHW Companion Project · 2026 · For discussion purposes only &nbsp;·&nbsp; <span>Wilfried Irambona, MD, MSc Public Health</span></p>
 </footer>
 
 <script>
