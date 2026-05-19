@@ -291,6 +291,27 @@
   .safety-item h4 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: .5rem; }
   .safety-item p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.7; }
 
+  /* Sustainability / Skill-Reinforcement section */
+  .sustainability { background: var(--cream); border-top: 1px solid var(--border); }
+  .sustainability-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 4rem; max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  .sustainability-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 2rem; border-radius: 20px;
+    background: var(--white); border: 1px solid var(--border);
+  }
+  .sustainability-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(217, 119, 6, 0.06);
+    display: grid; place-items: center;
+    font-size: 1.25rem;
+  }
+  .sustainability-item h4 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: .5rem; }
+  .sustainability-item p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
   /* Gender section */
   .gender { background: var(--cream); border-top: 1px solid var(--border); }
   .gender-grid {
@@ -365,6 +386,10 @@
     font-size: .82rem; color: var(--muted); line-height: 1.7;
     padding-left: 1.5rem; text-indent: -1.5rem; margin-bottom: 0.75rem;
   }
+  .ref-list a {
+    color: var(--teal-mid); text-decoration: none; word-break: break-all;
+  }
+  .ref-list a:hover { text-decoration: underline; }
 
   .author {
     background: #020617;
@@ -432,7 +457,7 @@
 
   @media (max-width: 968px) {
     .context-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .compare-grid, .steps, .privacy-grid, .evidence-grid, .safety-grid, .gender-grid { grid-template-columns: 1fr; }
+    .compare-grid, .steps, .privacy-grid, .evidence-grid, .safety-grid, .gender-grid, .sustainability-grid { grid-template-columns: 1fr; }
     .roadmap-phase { grid-template-columns: 1fr; gap: 0.5rem; }
     .author-inner { grid-template-columns: 1fr; text-align: center; }
     .author-avatar { margin: 0 auto; }
@@ -452,6 +477,7 @@
     <li><a href="#tool">The Tool</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#safety">Safety</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#author">Author</a></li>
@@ -512,17 +538,17 @@
       <div class="evidence-card">
         <div class="ev-metric">4.49/5</div>
         <h4>LLM Clinical Quality Score</h4>
-        <p>Best-performing models scored 4.49 out of 5 across 11 expert-rated clinical quality dimensions, significantly outperforming local clinicians (P&nbsp;&lt;&nbsp;0.001), on 5,609 real questions from 101 Rwandan CHWs (Rutunda et&nbsp;al., 2026, <em>Nature Health</em>).</p>
+        <p>Best-performing models scored 4.49 out of 5 across 11 expert-rated clinical quality dimensions, significantly outperforming local clinicians (P&nbsp;&lt;&nbsp;0.001), on 5,609 real questions from 101 Rwandan CHWs (Rutunda et al., 2026).</p>
       </div>
       <div class="evidence-card">
         <div class="ev-metric">&gt;500×</div>
         <h4>Cheaper Per Response</h4>
-        <p>LLM responses cost an average of US$0.0035, compared with US$5.43 from a GP. Even in Kinyarwanda, performance remained superior to clinicians at US$0.0044 per response (Rutunda et&nbsp;al., 2026).</p>
+        <p>LLM responses cost an average of US$0.0035, compared with US$5.43 from a GP. Even in Kinyarwanda, performance remained superior to clinicians at US$0.0044 per response (Rutunda et al., 2026).</p>
       </div>
       <div class="evidence-card">
         <div class="ev-metric">3 Trials</div>
         <h4>Real-World Evidence Underway</h4>
-        <p>Three LLM clinical decision support trials are running across Kenya, Nigeria, and Rwanda — including the first RCT of an LLM on real patient outcomes in Africa, enrolling 9,000 patients (Mateen et&nbsp;al., 2025, <em>Nature Medicine</em>).</p>
+        <p>Three LLM clinical decision support trials are running across Kenya, Nigeria, and Rwanda — including the first RCT of an LLM on real patient outcomes in Africa, enrolling 9,000 patients (Mateen et al., 2025).</p>
       </div>
       <div class="evidence-card">
         <div class="ev-metric">Honest</div>
@@ -649,6 +675,48 @@
   </div>
 </section>
 
+<!-- ═══════════════════ SUSTAINABILITY / SKILL REINFORCEMENT ═══════════════════ -->
+<section class="sustainability" id="sustainability">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="reveal">
+      <p class="section-label">Sustainable Design</p>
+      <h2>A Tool That Teaches CHWs to Think</h2>
+      <div class="section-divider"></div>
+      <p class="lead">Most AI clinical support tools think for the health worker. The CHW Companion is designed to teach the health worker to think. The goal is not permanent dependency on the tool, but progressive clinical competence that outlasts it.</p>
+    </div>
+    <div class="sustainability-grid reveal">
+      <div class="sustainability-item">
+        <div class="sustainability-icon">⚠️</div>
+        <div>
+          <h4>The Deskilling Risk Is Real</h4>
+          <p>When AI does the clinical reasoning for health workers, there is a risk that their own skills erode over time. A 2025 multicentre study found that doctors who regularly used AI during colonoscopies showed a significant drop in detection performance when the AI was removed (Budzy&#324; et al., 2025). The mechanism — cognitive offloading to technology — applies wherever AI replaces rather than reinforces human judgment.</p>
+        </div>
+      </div>
+      <div class="sustainability-item">
+        <div class="sustainability-icon">🧩</div>
+        <div>
+          <h4>Guided Reasoning, Not Passive Reading</h4>
+          <p>Instead of always displaying the classification immediately, the Companion can prompt the CHW to reason first: "You measured a mid-upper arm circumference of 11.2 cm for a child aged 18 months. What does that indicate?" The CHW arrives at the answer through guided reasoning. Correct answers are confirmed and reinforced. Incorrect answers are walked back through the clinical logic — in this case, that a MUAC below 11.5 cm signals severe acute malnutrition requiring urgent referral. This is skill-building by design.</p>
+        </div>
+      </div>
+      <div class="sustainability-item">
+        <div class="sustainability-icon">📈</div>
+        <div>
+          <h4>Progressive Autonomy</h4>
+          <p>The tool tracks each CHW's assessment accuracy over time. As a CHW demonstrates consistent correct reasoning for a given condition, AI-assisted prompts are progressively reduced. The data the tool generates becomes the evidence for when a CHW no longer needs it. What remains is not a tool-dependent worker, but a skilled one.</p>
+        </div>
+      </div>
+      <div class="sustainability-item">
+        <div class="sustainability-icon">💡</div>
+        <div>
+          <h4>A Different Investment Logic</h4>
+          <p>Most AI tools assume the technology must run indefinitely. This design inverts that assumption. Once CHWs reach reliable clinical competence, programmes can reduce API costs, connectivity demands, and device dependency. This is not just a learning feature. It is a sustainability strategy for health systems where electricity, connectivity, and financing remain structural constraints.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════ GENDER SENSITIVITY ═══════════════════ -->
 <section class="gender" id="gender">
   <div style="max-width:1200px; margin:0 auto;">
@@ -684,7 +752,7 @@
         <div class="gender-icon">💪</div>
         <div>
           <h4>Professional Empowerment</h4>
-          <p>Research from Mozambique found that female CHWs reported increased status when equipped with mHealth tools (Kinshella et al., 2021). CHW Companion is designed with this potential in mind.</p>
+          <p>Research from Mozambique found that female CHWs reported increased status when equipped with mHealth tools (Kinshella et al., 2022). CHW Companion is designed with this potential in mind.</p>
         </div>
       </div>
     </div>
@@ -777,14 +845,15 @@
       <div class="section-divider"></div>
     </div>
     <div class="ref-list reveal">
-      <p>Boniol, M. et al. (2022). The global health workforce stock and distribution in 2020 and 2030: a threat to equity and 'universal' health coverage? <em>BMJ Global Health</em>, 7(6), e009316.</p>
-      <p>Kinshella, M.-L. W. et al. (2021). How gender influenced the experience of using a mHealth intervention in rural Mozambique. <em>Frontiers in Global Women's Health</em>, 2, 728307.</p>
-      <p>Mateen, B. A. et al. (2025). Trials for LLM-supported clinical decisions in African primary healthcare. <em>Nature Medicine</em>, 31, 2833–2835.</p>
-      <p>Menon, V. et al. (2025). Assessing the potential utility of large language models for assisting community health workers. <em>BMJ Open</em>, 15, e110927.</p>
-      <p>Pieterse, P. (2025). Health workers in sub-Saharan Africa: concurrent skilled health worker shortages and under-employment. <em>Int. J. Health Planning and Management</em>, 40, 1335–1340.</p>
-      <p>Rutunda, S. et al. (2026). Large language models for frontline healthcare support in low-resource settings. <em>Nature Health</em>, 1, 191–197.</p>
-      <p>Scott, K. et al. (2021). Freedom within a cage: How patriarchal gender norms limit women's use of mobile phones in rural central India. <em>BMJ Global Health</em>, 6(Suppl 5), e005596.</p>
-      <p>WHO. (2021). <em>Ethics and governance of artificial intelligence for health.</em> World Health Organization.</p>
+      <p>Boniol, M., Kunjumen, T., Nair, T. S., Siyam, A., Campbell, J., &amp; Diallo, K. (2022). The global health workforce stock and distribution in 2020 and 2030: A threat to equity and 'universal' health coverage? <em>BMJ Global Health</em>, <em>7</em>(6), e009316. <a href="https://doi.org/10.1136/bmjgh-2022-009316" target="_blank" rel="noopener">https://doi.org/10.1136/bmjgh-2022-009316</a></p>
+      <p>Budzy&#324;, K., Roma&#324;czyk, M., Kitala, D., Ko&#322;odziej, P., Bugajski, M., Adami, H. O., Blom, J., Buszkiewicz, M., Halvorsen, N., Hassan, C., Roma&#324;czyk, T., Holme, &#216;., Jarus, K., Fielding, S., Kunar, M., Pellise, M., Pilonis, N., Kami&#324;ski, M. F., Kalager, M., ... Mori, Y. (2025). Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy: A multicentre, observational study. <em>The Lancet Gastroenterology &amp; Hepatology</em>, <em>10</em>(10), 896–903. <a href="https://doi.org/10.1016/S2468-1253(25)00133-5" target="_blank" rel="noopener">https://doi.org/10.1016/S2468-1253(25)00133-5</a></p>
+      <p>Kinshella, M.-L. W., Boene, H., Sevene, E., Val&aacute;, A., Sharma, S., Vidler, M., Magee, L. A., von Dadelszen, P., Munguambe, K., &amp; Payne, B. A. (2022). How gender influenced the experience of using a mHealth intervention in rural Mozambique: Secondary qualitative analysis of community health worker survey data. <em>Frontiers in Global Women's Health</em>, <em>3</em>, 661000. <a href="https://doi.org/10.3389/fgwh.2022.661000" target="_blank" rel="noopener">https://doi.org/10.3389/fgwh.2022.661000</a></p>
+      <p>Mateen, B. A., Menon, V., Agweyu, A., Korom, R., Omoluabi, E., McAfee, D., Shimelash, N., Rutunda, S., Rugege, C., Williams, G., Emmanuel-Fabula, M., Denniston, A. K., Liu, X., &amp; Miles, M. (2025). Trials for LLM-supported clinical decisions in African primary healthcare. <em>Nature Medicine</em>, <em>31</em>(9), 2833–2835. <a href="https://doi.org/10.1038/s41591-025-03815-3" target="_blank" rel="noopener">https://doi.org/10.1038/s41591-025-03815-3</a></p>
+      <p>Menon, V., Shimelash, N., Rutunda, S., Nshimiyimana, C., Archer, L., Emmanuel-Fabula, M., Berhe, D. F., Gill, J., Hezagira, E., Remera, E., Riley, R., Wong, R., Denniston, A. K., Mateen, B. A., &amp; Liu, X. (2025). Assessing the potential utility of large language models for assisting community health workers: Protocol for a prospective, observational study in Rwanda. <em>BMJ Open</em>, <em>15</em>(10), e110927. <a href="https://doi.org/10.1136/bmjopen-2025-110927" target="_blank" rel="noopener">https://doi.org/10.1136/bmjopen-2025-110927</a></p>
+      <p>Pieterse, P. (2025). Health workers in sub-Saharan Africa: Concurrent skilled health worker shortages and under-employment. <em>The International Journal of Health Planning and Management</em>, <em>40</em>(6), 1335–1340. <a href="https://doi.org/10.1002/hpm.70001" target="_blank" rel="noopener">https://doi.org/10.1002/hpm.70001</a></p>
+      <p>Rutunda, S., Williams, G., Kabanda, K., Nkurunziza, F., Uwiduhaye, S., Rugegamanzi, E., Nshimiyimana, C., Menon, V., Emmanuel-Fabula, M., Denniston, A. K., Liu, X., Hezagira, E., &amp; Mateen, B. A. (2026). Large language models for frontline healthcare support in low-resource settings. <em>Nature Health</em>, <em>1</em>(2), 191–197. <a href="https://doi.org/10.1038/s44360-025-00038-1" target="_blank" rel="noopener">https://doi.org/10.1038/s44360-025-00038-1</a></p>
+      <p>Scott, K., Shinde, A., Ummer, O., Yadav, S., Sharma, M., Purty, N., Jairath, A., Chamberlain, S., &amp; LeFevre, A. E. (2021). Freedom within a cage: How patriarchal gender norms limit women's use of mobile phones in rural central India. <em>BMJ Global Health</em>, <em>6</em>(Suppl 5), e005596. <a href="https://doi.org/10.1136/bmjgh-2021-005596" target="_blank" rel="noopener">https://doi.org/10.1136/bmjgh-2021-005596</a></p>
+      <p>World Health Organization. (2021). <em>Ethics and governance of artificial intelligence for health: WHO guidance.</em> World Health Organization. <a href="https://www.who.int/publications/i/item/9789240029200" target="_blank" rel="noopener">https://www.who.int/publications/i/item/9789240029200</a></p>
     </div>
   </div>
 </section>
